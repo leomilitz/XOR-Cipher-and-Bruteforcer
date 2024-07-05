@@ -7,6 +7,7 @@
 #include <string.h>
 #include <ctype.h>
 #include <stdbool.h>
+#include <float.h>
 
 /* XOR */
 void xor_cipher(const uint8_t* plaintext, const uint8_t* key, uint8_t* ciphertext, size_t length);
@@ -24,5 +25,6 @@ uint8_t* base64_decode(const char* data, size_t input_length, size_t* output_len
 
 /* Misc */
 int count_readable_chars(const uint8_t* text, size_t length);
+int hamming_distance(const unsigned char *str1, const unsigned char *str2, size_t len);
 
 #endif /*CRYPTOUTILS_H*/

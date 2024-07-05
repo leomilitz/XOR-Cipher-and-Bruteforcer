@@ -15,7 +15,7 @@ Base64:         SmFxdWVhbm9pdGVmb2lsb25nYWxvbmdhbG9uZ2Fsb25nYQ==
 ```
 
 # Xor One-Digit Bruteforcer
-Receives as input a XOR ciphertext and tries to bruteforce it with one digit keys. The result with more alphabetical, numeric and space characters is claimed as the decoded text.
+Receives as input a XOR ciphertext and tries to bruteforce it with 2-40 byte keys.
 ## Compile
 ```sh
 gcc bruteforcer.c cryptoutils.c -ansi -Wall -o bruteforcer
@@ -23,7 +23,4 @@ gcc bruteforcer.c cryptoutils.c -ansi -Wall -o bruteforcer
 ## Run
 ```
 $ ./bruteforcer 072c232c223d2c3e3e2c2328232538202e2c3f3f223d223f2c3c3824072c232c223d2c3e3e2c2328232538202b24212028232c191b1b222e283c382828233f22212c2238393f222e242a2c3f3f223d223f2c2408232c22292c2f22212c3d3f223c38283b2c242c2e222339282e283f002c243e38203d22382e2228202c243e382
-
-Best key: M (0x4d)
-Decoded message: JanaopassanenhumcarroporaquiJanaopassanenhumfilmenaTVVocequeenrolaoutrocigarroporaiEnaodabolaproquevaiacontecerMaisumpoucoemaisu
 ```

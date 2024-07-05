@@ -1,5 +1,25 @@
 #include "cryptoutils.h"
 
+/* Função para contar o número de bits '1' em um byte. */
+int count_bits(unsigned char byte) {
+    int count = 0;
+    while (byte) {
+        count += byte & 1;
+        byte >>= 1;
+    }
+    return count;
+}
+
+/* Função para o calculo da hamming distance. */
+int hamming_distance(const unsigned char *str1, const unsigned char *str2, size_t len) {
+    int distance = 0;
+    size_t i;
+    for (i = 0; i < len; ++i) {
+        distance += count_bits(str1[i] ^ str2[i]);
+    }
+    return distance;
+}
+
 /* Função que realiza a operação XOR entre dois buffers */
 void xor_cipher(const uint8_t* plaintext, const uint8_t* key, uint8_t* ciphertext, size_t length) {
     size_t i;
@@ -163,5 +183,3 @@ int count_readable_chars(const uint8_t* text, size_t length) {
     }
     return count;
 }
-
-
